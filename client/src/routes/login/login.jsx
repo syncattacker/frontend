@@ -33,7 +33,7 @@ const {data} = await axios.post('https://house-zjit.onrender.com/api/auth/login'
    password,
   }, {
     headers: {
-      'Access-Control-Allow-Origin': 'https://estate-housing-8eb9a.web.app'
+      'Access-Control-Allow-Origin': 'http://localhost:5173'
     }
   }
 )

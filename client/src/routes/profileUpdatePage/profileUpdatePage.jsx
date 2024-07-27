@@ -19,7 +19,7 @@ function ProfileUpdatePage() {
     const { username, email, password } = Object.fromEntries(formData);
 
     try {
-      const res = await apiRequest.put(`https://backend-1-2m31.onrender.com/users/${currentUser.id}`, {
+      const res = await apiRequest.put(`https://house-zjit.onrender.com/users/${currentUser.id}`, {
         username,
         email,
         password,

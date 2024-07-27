@@ -15,7 +15,7 @@ function ProfilePage() {
 
   const handleLogout = async () => {
     try {
-      await apiRequest.post("https://backend-1-2m31.onrender.com/auth/logout");
+      await apiRequest.post("https://house-zjit.onrender.com/api/auth/logout");
       updateUser(null);
       navigate("/");
     } catch (err) {

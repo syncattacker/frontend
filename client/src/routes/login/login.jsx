@@ -28,7 +28,7 @@ function Login() {
       //   username,
       //   password,
       // });axios.post(url: "", headers: {}, params: {})
-const {data} = await axios.post('https://house-zjit.onrender.com/api/auth/login', {
+const res = await axios.post('https://house-zjit.onrender.com/api/auth/login', {
    username,
    password,
   }, {

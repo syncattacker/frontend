@@ -33,7 +33,9 @@ const res = await apiRequest.post('https://house-zjit.onrender.com/api/auth/logi
    password,
   }, {
     headers: {
-      'Access-Control-Allow-Origin': 'https://estate-housing-8eb9a.web.app'
+      'Access-Control-Allow-Origin': 'https://estate-housing-8eb9a.web.app',
+      'Access-Control-Allow-Credentials' : true,
+
     }
   }
 )

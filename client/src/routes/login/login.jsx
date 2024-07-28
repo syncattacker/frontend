@@ -28,12 +28,12 @@ function Login() {
       //   username,
       //   password,
       // });axios.post(url: "", headers: {}, params: {})
-const res = await axios.post('https://house-zjit.onrender.com/api/auth/login', {
+const res = await apiRequest.post('https://house-zjit.onrender.com/api/auth/login', {
    username,
    password,
   }, {
     headers: {
-      'Access-Control-Allow-Origin': 'http://localhost:5173'
+      'Access-Control-Allow-Origin': 'https://estate-housing-8eb9a.web.app'
     }
   }
 )
@@ -42,7 +42,8 @@ const res = await axios.post('https://house-zjit.onrender.com/api/auth/login', {
 
       navigate("/");
     } catch (err) {
-      setError(err.response.data.message);
+       setError(err.response.data?.message);
+      // console.log(err);
     } finally {
       setIsLoading(false);
     }

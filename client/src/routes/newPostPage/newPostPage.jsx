@@ -184,6 +184,7 @@ import "react-quill/dist/quill.snow.css";
 import axios from "axios";
 import UploadWidget from "../../components/uploadWidget/UploadWidget";
 import { useNavigate } from "react-router-dom";
+import apiRequest from "../../lib/apiRequest";
 
 function NewPostPage() {
   const [value, setValue] = useState("");
@@ -198,7 +199,7 @@ function NewPostPage() {
     const inputs = Object.fromEntries(formData);
 
     try {
-      const res = await axios.post("https://house-zjit.onrender.com/api/posts", {
+      const res = await apiRequest.post("https://house-zjit.onrender.com/api/posts", {
         postData: {
           title: inputs.title,
           price: parseInt(inputs.price),

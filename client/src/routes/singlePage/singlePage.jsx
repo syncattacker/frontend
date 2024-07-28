@@ -20,7 +20,7 @@ function SinglePage() {
     // AFTER REACT 19 UPDATE TO USEOPTIMISTIK HOOK
     setSaved((prev) => !prev);
     try {
-      await apiRequest.post("https://house-zjit.onrender.com/users/save", { postId: post.id });
+      await apiRequest.post("https://house-zjit.onrender.com/api/users/save", { postId: post.id });
     } catch (err) {
       console.log(err);
       setSaved((prev) => !prev);

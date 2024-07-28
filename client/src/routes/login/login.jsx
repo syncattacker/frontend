@@ -31,13 +31,14 @@ function Login() {
 const res = await apiRequest.post('https://house-zjit.onrender.com/api/auth/login', {
    username,
    password,
-  }, {
-    headers: {
-      'Access-Control-Allow-Origin': 'https://estate-housing-8eb9a.web.app',
-      'Access-Control-Allow-Credentials' : true,
+   }
+  //, {
+  //   headers: {
+  //     'Access-Control-Allow-Origin': 'https://estate-housing-8eb9a.web.app',
+  //     'Access-Control-Allow-Credentials' : true,
 
-    }
-  }
+  //   }
+  // }
 )
 
       updateUser(res.data)

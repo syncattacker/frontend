@@ -21,7 +21,7 @@ function Register() {
     const password = formData.get("password");
 
     try {
-      const res = await apiRequest.post("https://house-zjit.onrender.com/auth/register", {
+      const res = await apiRequest.post("https://house-zjit.onrender.com/api/auth/register", {
         username,
         email,
         password,

@@ -32,12 +32,23 @@ function Login() {
     const password = formData.get("password");
 
     try {
-      
-   const res = await apiRequest.post('https://house-zjit.onrender.com/api/auth/login', {
+      //axios.post(url: "", headers: {}, params: {})
+      // const res = await apiRequest.post(url :"https://house-zjit.onrender.com/api/auth/login", headers: {'Access-Control-Allow-Origin'},params {
+        
+      //   username,
+      //   password,
+      // });axios.post(url: "", headers: {}, params: {})
+const res = await apiRequest.post('https://house-zjit.onrender.com/api/auth/login', {
    username,
    password,
    }
-  
+  , {
+    headers: {
+      'Access-Control-Allow-Origin': 'https://estate-housing-8eb9a.web.app',
+      'Access-Control-Allow-Credentials' : true,
+
+    }
+  }
 )
 
       updateUser(res.data)

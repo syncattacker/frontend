@@ -12,14 +12,14 @@ function Login() {
 
   const navigate = useNavigate();
 
-  const Login = async (credentials) => {
-    try {
-      const res = await apiRequest.post("https://house-zjit.onrender.com/api/auth/login", credentials);
-      localStorage.setItem("token", res.data.token);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  // const Login = async (credentials) => {
+  //   try {
+  //     const res = await apiRequest.post("https://house-zjit.onrender.com/api/auth/login", credentials);
+  //     localStorage.setItem("token", res.data.token);
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
   
 
   const handleSubmit = async (e) => {
@@ -38,10 +38,11 @@ function Login() {
       //   username,
       //   password,
       // });axios.post(url: "", headers: {}, params: {})
-const res = await apiRequest.post('https://house-zjit.onrender.com/api/auth/login', {
+const res = await apiRequest.post('https://house-zjit.onrender.com/api/auth/login', credentials);
+localStorage.setItem("token", res.data.token); 
    username,
    password,
-   }
+   
   //, {
   //   headers: {
   //     'Access-Control-Allow-Origin': 'https://estate-housing-8eb9a.web.app',
@@ -49,7 +50,7 @@ const res = await apiRequest.post('https://house-zjit.onrender.com/api/auth/logi
 
   //   }
   // }
-)
+
 
       updateUser(res.data)
 

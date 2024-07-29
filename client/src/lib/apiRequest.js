@@ -16,4 +16,9 @@ const apiRequest = axios.create({
   },
 });
 
+apiRequest.interceptors.request.use((config) => {
+  console.log("Authorization Header:", config.headers.Authorization); // Check if the token is set
+  return config;
+});
+
 export default apiRequest;

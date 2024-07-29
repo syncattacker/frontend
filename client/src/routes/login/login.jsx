@@ -12,6 +12,16 @@ function Login() {
 
   const navigate = useNavigate();
 
+  const Login = async (credentials) => {
+    try {
+      const res = await apiRequest.post("https://house-zjit.onrender.com/api/auth/login", credentials);
+      localStorage.setItem("token", res.data.token);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);

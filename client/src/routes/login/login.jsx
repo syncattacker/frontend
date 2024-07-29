@@ -3,7 +3,6 @@ import "./login.scss";
 import { Link, useNavigate } from "react-router-dom";
 import apiRequest from "../../lib/apiRequest";
 import { AuthContext } from "../../context/AuthContext";
-import axios from "axios";
 
 function Login() {
   const [error, setError] = useState("");
@@ -15,7 +14,7 @@ function Login() {
 
   // const Login = async (credentials) => {
   //   try {
-  //     const res = await apiRequest.post("https://house-zjit.onrender.com/api/auth/login", credentials);
+  //     const res = await api.post("https://house-zjit.onrender.com/api/auth/login", credentials);
   //     localStorage.setItem("token", res.data.token);
   //   } catch (err) {
   //     console.error(err);
@@ -33,25 +32,13 @@ function Login() {
     const password = formData.get("password");
 
     try {
-      //axios.post(url: "", headers: {}, params: {})
-      // const res = await apiRequest.post(url :"https://house-zjit.onrender.com/api/auth/login", headers: {'Access-Control-Allow-Origin'},params {
-        
-      //   username,
-      //   password,
-      // });axios.post(url: "", headers: {}, params: {})
-const res = await axios.post('https://house-zjit.onrender.com/api/auth/login', credentials);
-localStorage.setItem("token", res.data.token); 
+      
+   const res = await apiRequest.post('https://house-zjit.onrender.com/api/auth/login', {
    username,
    password,
-   
-  //, {
-  //   headers: {
-  //     'Access-Control-Allow-Origin': 'https://estate-housing-8eb9a.web.app',
-  //     'Access-Control-Allow-Credentials' : true,
-
-  //   }
-  // }
-
+   }
+  
+)
 
       updateUser(res.data)
 

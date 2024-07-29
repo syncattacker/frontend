@@ -3,6 +3,7 @@ import "./login.scss";
 import { Link, useNavigate } from "react-router-dom";
 import apiRequest from "../../lib/apiRequest";
 import { AuthContext } from "../../context/AuthContext";
+import axios from "axios";
 
 function Login() {
   const [error, setError] = useState("");
@@ -38,7 +39,7 @@ function Login() {
       //   username,
       //   password,
       // });axios.post(url: "", headers: {}, params: {})
-const res = await apiRequest.post('https://house-zjit.onrender.com/api/auth/login', credentials);
+const res = await axios.post('https://house-zjit.onrender.com/api/auth/login', credentials);
 localStorage.setItem("token", res.data.token); 
    username,
    password,

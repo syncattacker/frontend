@@ -11,13 +11,12 @@ import axios from "axios";
 
 const apiRequest = axios.create({
   baseURL: "https://house-zjit.onrender.com/api",
-  headers: {
-    Authorization: `Bearer ${localStorage.getItem("token")}`,
-  },
 });
 
 apiRequest.interceptors.request.use((config) => {
-  console.log("Authorization Header:", config.headers.Authorization); // Check if the token is set
+  const token = localStorage.getItem("token");
+  config.headers.Authorization = token ? `Bearer ${token}` : "";
+  console.log("Authorization Header:", config.headers.Authorization); // Debugging
   return config;
 });
 
